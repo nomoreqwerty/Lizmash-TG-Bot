@@ -1,0 +1,35 @@
+[package]
+name = "lizmash"
+authors = ["nomoreqwerty <nomoreqwerty@tuta.io>"]
+repository = "https://github.com/nomoreqwerty/Lizmash-TG-Bot"
+version = "0.1.0-mvp"
+license = "GNU GPLv3"
+edition = "2021"
+description = "Телеграм бот для знакомства глухих и слабослышащих людей"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = "1.0.197"
+serde_with_macros = "3.6.1"
+tokio = { version = "1.36.0", features = ["full"] }
+teloxide = { version = "0.12.2", features = ["full"] }
+mongodb = { version = "2.8.1", features = ["tokio-runtime", "bson-chrono-0_4"] }
+thiserror = "1.0.57"
+chrono = { version = "0.4.34", features = ["serde", "rkyv"] }
+futures = "0.3.30"
+deadpool = "0.10.0"
+nano-id = "0.3.3"
+geoutils = "0.5.1"
+derive-getters = "0.3.0"
+enum-iterator = "1.5.0"
+serde_json = "1.0.114"
+reqwest = { version = "0.11.24", features = ["json"] }
+simple_logger = "4.3.3"
+log = "0.4.20"
+pretty_env_logger = "0.5.0"
+
+[profile.release]
+lto = true
+strip = true
+overflow-checks = true
